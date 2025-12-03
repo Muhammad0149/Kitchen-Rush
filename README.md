@@ -34,10 +34,8 @@ You need the following software installed:
 
 1. **Clone the repository:**
 
-git clone https://github.com/YourUsername/KitchenRush.git
+git clone https://github.com/Muhammad0149/KitchenRush.git
 
-
-*(Replace `YourUsername/KitchenRush` with the actual path to your repository)*
 
 2. **Open in Unity Hub:**
 
