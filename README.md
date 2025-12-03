@@ -28,13 +28,13 @@ You need the following software installed:
 
 * **Unity Hub:** Download the Unity Hub from the official website.
 
-* **Unity Editor:** The project uses **Unity 2022.3 LTS**. Please ensure you have this specific version installed via Unity Hub.
+* **Unity Editor:** The project uses **Unity 6000.2.14 **. Please ensure you have this specific version installed via Unity Hub.
 
 ### Installation
 
 1. **Clone the repository:**
 
-git clone https://github.com/Muhammad0149/KitchenRush.git
+git clone https://github.com/Muhammad0149/Kitchen-Rush.git
 
 
 2. **Open in Unity Hub:**
@@ -51,7 +51,7 @@ git clone https://github.com/Muhammad0149/KitchenRush.git
 
 4. **Run the Game:**
 
-* The main scene is located at `Assets/Scenes/MainGame.unity` (or similar).
+* The main scene is located at `Assets/Scenes/GameScene.unity` (or similar).
 
 * Open the scene and press the **Play** button in the Unity Editor.
 
