@@ -9,30 +9,45 @@ public class ClearCounter : BaseCounter
     {
         if (!HasKitchenObject())
         {
-            //has no object
+            // 1. Counter is EMPTY
             if (player.HasKitchenObject())
             {
-                //player is carrying something
+                // Player is carrying something -> Put it down
                 player.GetKitchenObject().SetKitchenObjectParent(this);
-            }
-            else
-            {
-                //player not carrying something
             }
         }
         else
         {
-            //has object
-            if(player.HasKitchenObject())
+            // 2. Counter HAS an object
+            if (player.HasKitchenObject())
             {
-                //player is carrying something
+                if (player.GetKitchenObject().TryGetPlate(out PlateKitchenObject plateKitchenObject))
+                {
+                    // Player is holding a plate
+                    if (plateKitchenObject.TryAddIngredient(GetKitchenObject().GetKitchenObjectSO()))
+                    {
+                        GetKitchenObject().DestroySelf(); // Successfully added, destroy item on counter
+                    }
+                }
+                else
+                {
+                    // Player is holding a non-plate item (e.g., another tomato, etc.)
+                    if (GetKitchenObject().TryGetPlate(out plateKitchenObject))
+                    {
+                        // Counter is holding a plate
+                        if (plateKitchenObject.TryAddIngredient(player.GetKitchenObject().GetKitchenObjectSO()))
+                        {
+                            // Successfully added, destroy item in player's hand
+                            player.GetKitchenObject().DestroySelf();
+                        }
+                    }
+                }
             }
             else
             {
-                //player is not carrying something
+                // Give the item from the counter to the player
                 GetKitchenObject().SetKitchenObjectParent(player);
             }
+            }
         }
-    }
-}
- 
+    } 

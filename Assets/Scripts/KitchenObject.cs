@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UIElements.Experimental;
 
 public class KitchenObject : MonoBehaviour
 {
@@ -50,5 +51,21 @@ public class KitchenObject : MonoBehaviour
         KitchenObject kitchenObject = KitchenObjectTransform.GetComponent<KitchenObject>();
         kitchenObject.SetKitchenObjectParent(kitchenObjectParent);
         return kitchenObject;
+    }
+
+    public bool TryGetPlate(out PlateKitchenObject plateKitchenObject)
+    {
+        if(this is PlateKitchenObject)
+        {
+            plateKitchenObject = this as PlateKitchenObject;
+            return true;
+
+
+        }
+        else
+        {
+            plateKitchenObject = null;
+            return false;
+        }
     }
 }
