@@ -1,9 +1,18 @@
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class SoundManager : MonoBehaviour
 {
+    public static SoundManager instance { get; private set; }
+
 
     [SerializeField] private AudioClipRefsSO audioClipRefsSO;
+
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     private void Start()
     {
@@ -59,5 +68,10 @@ public class SoundManager : MonoBehaviour
     private void PlaySound(AudioClip audioClip, Vector3 position, float volume = 1f)
     {
         AudioSource.PlayClipAtPoint(audioClip, position, volume);
+    }
+
+    public void PlayFootStepSound(Vector3 position, float volume)
+    {
+        PlaySound(audioClipRefsSO.footSteps,position,volume);
     }
 }

@@ -1722,6 +1722,7 @@ GameObject:
   m_Component:
   - component: {fileID: 800196277}
   - component: {fileID: 800196278}
+  - component: {fileID: 800196279}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1764,6 +1765,18 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   KitchenObjectHoldPoint: {fileID: 903023277}
+--- !u!114 &800196279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 800196275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b3fcbbcc11d1584dbaaa6b35f8436da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerSounds
 --- !u!1 &820663445
 GameObject:
   m_ObjectHideFlags: 0
@@ -2422,7 +2435,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc2efca76863d87438d6d04e2a05dc75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SoundManager
-  audioScriptRefsSO: {fileID: 11400000, guid: ebe350bbdcc0bfd469ce1f906ba56adf, type: 2}
+  audioClipRefsSO: {fileID: 11400000, guid: ebe350bbdcc0bfd469ce1f906ba56adf, type: 2}
 --- !u!4 &1095286362
 Transform:
   m_ObjectHideFlags: 0
@@ -3086,7 +3099,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 7a05dfef8ff133848b3b25408c74021c, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0
